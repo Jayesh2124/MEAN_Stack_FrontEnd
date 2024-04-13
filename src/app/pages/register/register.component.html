@@ -1,0 +1,42 @@
+<div class="p-3  flex flex-row items-center bg-blue-100 ">
+    <div class=" items-center md:block hidden   sm:mx-0 mx-auto sm:m-0">
+        <img src="../../../assets/dog-laptop.png" alt="dog-laptop" class="md:w-[40rem] w-[20rem] mx-auto">
+    </div>
+    <div class="md:w-[35%] sm:w-full bg-gradient-to-tr from-purple-400 via-white to-pink-200 m-3 pt-5 pl-10 pr-10 mx-auto align rounded-2xl" >
+        <h3 class="text-3xl text-center font-semibold mb-3  "> Register </h3>
+        <form [formGroup]="registerForm" class="flex flex-col mx-auto   ">
+            <div class="flex flex-col mt-1 mb-1">
+                <input class="p-2 border border-gray-300 rounded"  formControlName="firstName" type="text" placeholder="First Name">
+                <span class="text-red-800" *ngIf="registerForm.hasError('required', 'firstName') && registerForm.controls['firstName'].touched" > *First Name is required </span>
+            </div>
+            <div class="flex flex-col mt-1 mb-1">
+                <input class="p-2 border border-gray-300 rounded"  formControlName="lastName" type="text" placeholder="Last Name">
+                <span class="text-red-800" *ngIf="registerForm.hasError('required', 'lastName') && registerForm.controls['lastName'].touched"> *Last Name is required </span>
+            </div>
+            <div class="flex flex-col mt-1 mb-1">
+                <input class="p-2 border border-gray-300 rounded"  formControlName="email" type="text" placeholder="Email">
+                <span class="text-red-800" *ngIf="registerForm.hasError('required', 'email') && registerForm.controls['email'].touched"> *Email is required </span>
+                <span class="text-red-800" *ngIf="registerForm.hasError('email', 'email') "> *Email is invalid </span>
+            </div>
+            <div class="flex flex-col mt-1 mb-1">
+                <input class="p-2 border border-gray-300 rounded" formControlName="userName"  type="text" placeholder="User Name">
+                <span class="text-red-800" *ngIf="registerForm.hasError('required', 'userName') && registerForm.controls['userName'].touched"> *User Name is required </span>
+            </div>
+            <div class="flex flex-col mt-1 mb-1">
+                <input class="p-2 border border-gray-300 rounded" formControlName="password"  type="password" placeholder="Password">
+                <span class="text-red-800" *ngIf="registerForm.hasError('required', 'password') && registerForm.controls['password'].touched"> *Password is required </span>
+            </div>
+            <div class="flex flex-col mt-1 mb-1 ">
+                <input class="p-2 border border-gray-300 rounded"  formControlName="confirmPassword" type="password" placeholder="Confirm Password">
+                <span class="text-red-800" *ngIf="registerForm.hasError('required', 'confirmPassword') && registerForm.controls['confirmPassword'].touched" > *Confirm Password is required </span>
+                <span class="text-red-800" *ngIf="registerForm.hasError('confirmPasswordValidator', 'confirmPassword') " > *Password did not matched </span>
+            </div>
+            <button class="bg-indigo-500 p-2 rounded mt-3 text-slate-50" [disabled]="registerForm.invalid" [class.disabled]="registerForm.invalid" 
+            (click)="register()" >Submit</button>
+        </form>
+        <div class=" flex justify-center mt-2" > 
+            <span> Already Have Account?</span> <a [routerLink]="'/login'"  class="text-indigo-500 ml-2 cursor-pointer">Login Here</a>
+        </div>
+    </div>
+   
+</div>
