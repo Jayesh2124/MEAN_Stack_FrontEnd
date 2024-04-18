@@ -29,14 +29,15 @@ export default class ForgetPasswordComponent {
   {
     let userDetails = this.forgetPassForm.value
     console.log("ForgetPassword : ",userDetails)
-    return;
-    this.authService.loginService(userDetails)
+    this.authService.sendEmailService(userDetails)
     .subscribe({
       next:(Response)=>{
-       
+        alert(Response.message);
+        this.forgetPassForm.reset();
+        this.router.navigate(['login']);
       },
       error:(err)=>{
-        console.log(err);
+        console.log(err.error.message);
       }
     })
   }

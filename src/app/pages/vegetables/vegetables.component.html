@@ -1,0 +1,6 @@
+
+<div class="container grid grid-cols-2  md:grid-cols-3  gap-4 mx-auto" *ngIf="veggiesList"  >
+    <ng-container *ngFor="let veg of veggiesList" >
+        <app-cards [veggies]="veg"  />
+    </ng-container>
+</div>

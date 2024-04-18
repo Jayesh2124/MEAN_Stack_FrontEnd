@@ -1,6 +1,17 @@
-.baclpanel{
-    background-image: url('https://vastphotos.com/files/uploads/photos/10231/farm-at-sunset-l.jpg') ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.baclpanel {
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        content: "";
+        background-image: url('https://vastphotos.com/files/uploads/photos/10231/farm-at-sunset-l.jpg');
+        background-size: cover; // Optional: Adjust this according to your needs
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        
+        z-index: -1; // Make sure the pseudo-element is behind the content
+      }
 }

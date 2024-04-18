@@ -1,26 +1,42 @@
-<div class=" p-3 flex flex-row items-center justify-center min-h-screen baclpanel  ">
-    <div
-        class="md:w-[45%] sm:w-full    bg-slate-800 bg-opacity-80 m-3 pt-5 pl-10 pr-10 flex flex-col items-center justify-center  rounded-2xl">
-        <h3 class="text-3xl text-center font-semibold mb-3  "> Sign In </h3>
-        <form [formGroup]="loginForm" class=" mx-auto flex flex-col md:flex-row items-center ">
-            <div >
-                <img src="../../../assets/laptopBoy.png" alt="">
-            </div>
-            <div class="flex flex-col mt-1 mb-1 ">
-                <input class="p-2 border border-gray-300 rounded m-2" type="text" formControlName="email" name="email" placeholder="Email">
-                <span class="text-slate-100" *ngIf="loginForm.hasError('required', 'email') && loginForm.controls['email'].touched"> *Email is required </span>
-                <span class="text-slate-100" *ngIf="loginForm.hasError('email', 'email') "> *Email is invalid </span>
-                
-                <input class="p-2 border border-gray-300 rounded m-2" type="password" formControlName="password" name="password" placeholder="Password">
-                <span class="text-slate-100" *ngIf="loginForm.hasError('required', 'password') && loginForm.controls['password'].touched"> *Password is required </span>
-                
-                <button class="bg-indigo-500 p-2 rounded mt-3 text-slate-50" [disabled]="loginForm.invalid" [class.disabled]="loginForm.invalid" (click)="login()" >Login</button>
-                <div class="flex justify-between mt-5">
-                     <a [routerLink]="'/forget_password'" class="text-slate-100 ml-2 cursor-pointer">Forget Password?</a> 
-                     <a [routerLink]="'/register'" class="text-slate-100 ml-2 cursor-pointer">Create Account.</a> 
-                </div>
-            </div>
-        </form>
+<div class="baclpanel min-h-screen">
+    <div class="mx-10 p-4   font-bold text-4xl">
+        <p class="text-slate-100  "> Green-<span class="text-green-900">Mart </span> </p>
+    </div>
+    <div class=" p-3 flex flex-row items-center justify-center h-[80vh]   no-scrollbar  ">
+        <div
+            class="md:w-[35%] sm:w-1/2    bg-slate-800 bg-opacity-80 m-3 pt-5 pl-10 pr-10 flex flex-col items-start justify-start  rounded-2xl">
+            <h3 class=" mx-auto text-3xl text-start font-semibold mb-3  "> Sign In </h3>
+            <form [formGroup]="loginForm" class=" mx-auto flex flex-col md:flex-row items-center ">
 
+                <div class="flex flex-col mt-1 mb-1 ">
+                    <input class="p-2 border border-gray-300 rounded m-2" type="text" formControlName="email"
+                        name="email" placeholder="Email">
+                    <span class="text-slate-100"
+                        *ngIf="loginForm.hasError('required', 'email') && loginForm.controls['email'].touched"> *Email
+                        is required </span>
+                    <span class="text-slate-100" *ngIf="loginForm.hasError('email', 'email') "> *Email is invalid
+                    </span>
+
+                    <input class="p-2 border border-gray-300 rounded m-2" type="password" formControlName="password"
+                        name="password" placeholder="Password">
+                    <span class="text-slate-100"
+                        *ngIf="loginForm.hasError('required', 'password') && loginForm.controls['password'].touched">
+                        *Password is required </span>
+
+                    <button class="bg-indigo-500 p-2 rounded mt-3 text-slate-50" [disabled]="loginForm.invalid"
+                        [class.disabled]="loginForm.invalid" (click)="login()">Sign In</button>
+                    <div class="flex flex-col gap-4 justify-between mt-5">
+                        <div class="flex justify-center">
+                            <a [routerLink]="'/forget_password'" class="text-slate-100 ml-2 cursor-pointer">Forget
+                                Password?</a>
+                        </div>
+                        <span class="text-slate-50"> New to GreenMart?
+                            <a [routerLink]="'/register'" class="text-slate-100 ml-2 cursor-pointer">Sign Up Now</a>
+                        </span>
+                    </div>
+                </div>
+            </form>
+
+        </div>
     </div>
 </div>

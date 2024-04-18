@@ -36,10 +36,10 @@ export default class RegisterComponent implements OnInit {
   register() {
     debugger;
     let registerValues = this.registerForm.value
-    this.authService.registerService(registerValues)
+    this.authService.resetPasswordService(registerValues)
     .subscribe({
       next:(Res)=>{
-        alert("User Created..!");
+        alert("Password is Reset Created..!");
         this.registerForm.reset();
         this.router.navigate(['login']);
       },
