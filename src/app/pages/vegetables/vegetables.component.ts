@@ -11,7 +11,7 @@ import { CardsComponent } from '../../components/cards/cards.component';
   templateUrl: './vegetables.component.html',
   styleUrl: './vegetables.component.scss'
 })
-export class VegetablesComponent implements OnInit{
+export default class VegetablesComponent implements OnInit{
 
   private veggiesService = inject(VeggiesServiceService);
   veggiesList : Vegetables[] = [];
