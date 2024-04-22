@@ -23,12 +23,20 @@ export const routes: Routes = [
                 component: CardsComponent
             },
             {
-                path: 'veggies',
+                path: 'Veggies',
                 loadComponent: ()=> import('./pages/vegetables/vegetables.component'),
             },
             {
                 path: 'Fruits',
                 loadComponent: ()=> import('./pages/fruits/fruits.component'),
+            },
+            {
+                path: 'Grocery',
+                loadComponent: ()=> import('./pages/grocery/grocery.component'),
+            },
+            {
+                path: 'Profile',
+                loadComponent: ()=> import('./pages/profile/profile.component'),
             },
             {
                 path: 'cart',

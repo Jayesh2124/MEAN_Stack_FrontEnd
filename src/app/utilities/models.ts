@@ -20,3 +20,27 @@ export class Fruits {
     createdAt: string = '';
     updatedAt: string = '';
 }
+
+export class BabiesProducts {
+    product: string = ''
+    type: string = ''
+    description: string = ''
+    ingredients: string[] = []
+    price: number = 0
+    currency: string = ''
+    volume: string = ''
+}
+
+export class User {
+    _id: string = ''
+    firstName: string = ''
+    lastName: string = ''
+    userName: string = ''
+    emails: string = ''
+    password: string = ''
+    profileImage: string = ''
+    isAdmin: boolean = false
+    roles: any[] = []
+    createdAt: string = ''
+    updatedAt: string = ''
+}

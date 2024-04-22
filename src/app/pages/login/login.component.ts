@@ -32,6 +32,9 @@ export default class LoginComponent implements OnInit{
     .subscribe({
       next:(Response)=>{
         alert("login Successful..!");
+        console.log("UserDetails", Response);
+        
+        localStorage.setItem("Green-mart-User",JSON.stringify(Response.data));
         this.router.navigate(['home']);
       },
       error:(err)=>{
