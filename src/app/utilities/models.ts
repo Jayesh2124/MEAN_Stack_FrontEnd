@@ -29,6 +29,7 @@ export class BabiesProducts {
     price: number = 0
     currency: string = ''
     volume: string = ''
+
 }
 
 export class User {
@@ -43,4 +44,12 @@ export class User {
     roles: any[] = []
     createdAt: string = ''
     updatedAt: string = ''
+}
+
+export class  productDetails  {
+    productName : string = ''
+    price : number = 0
+    ingredients : any[any] = [] 
+    volume: string = ''
+    imgSrc: string = ''
 }

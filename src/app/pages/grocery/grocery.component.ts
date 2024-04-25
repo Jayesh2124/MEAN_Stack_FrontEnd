@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
-import { BabiesProducts } from '../../utilities/models';
+import { BabiesProducts, productDetails } from '../../utilities/models';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-grocery',
@@ -13,6 +14,7 @@ import { BabiesProducts } from '../../utilities/models';
 export default class GroceryComponent implements OnInit {
 
   private productService = inject(ProductsService);
+  private router = inject(Router)
 
   babiesProductList: Array<BabiesProducts> = []
   openTab = 1;
@@ -35,5 +37,19 @@ export default class GroceryComponent implements OnInit {
           console.log("Error: ", error.message);
         }
       })
+  }
+
+  viewMore(productData : BabiesProducts){
+    debugger;
+    let details : productDetails = {
+      productName : productData.product,
+      price : productData.price,
+      ingredients : productData.ingredients,
+      volume: productData.volume,
+      imgSrc : `../../../assets/${productData.product}.jpg`
+    }
+    this.productService.productDetails = details
+    this.router.navigate(['home/Product']);
+
   }
 }

@@ -39,6 +39,10 @@ export const routes: Routes = [
                 loadComponent: ()=> import('./pages/profile/profile.component'),
             },
             {
+                path: 'Product',
+                loadComponent: ()=> import('./pages/product-details/product-details.component'),
+            },
+            {
                 path: 'cart',
                 component: CartComponent
             },
