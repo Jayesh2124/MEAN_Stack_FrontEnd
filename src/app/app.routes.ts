@@ -19,8 +19,8 @@ export const routes: Routes = [
         path:'home', loadComponent: ()=> import('./pages/home/home.component'),
         children: [
             {
-                path: '',
-                component: CardsComponent
+                path: 'Dashboard',
+                loadComponent: ()=> import('./pages/dashboard/dashboard.component')
             },
             {
                 path: 'Veggies',

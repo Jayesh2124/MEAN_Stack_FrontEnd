@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { VeggiesServiceService } from '../../services/veggies-service.service';
 import { CardsComponent } from '../../components/cards/cards.component';
 import { Vegetables } from '../../utilities/models';
@@ -15,9 +15,18 @@ import { HeaderComponent } from '../../components/header/header.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export default class HomeComponent  {
+export default class HomeComponent implements OnInit  {
 
-  
+  private router = inject(Router);
+
+
+  ngOnInit(): void {
+    debugger;
+    if(this.router.url  === '/home/' || this.router.url  === '/home' )
+      {
+        this.router.navigate(["/home/Dashboard/"]);
+      }
+  }
 
   
 }

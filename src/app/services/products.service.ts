@@ -11,10 +11,12 @@ export class ProductsService {
   private http = inject(HttpClient)
 
   productDetails: productDetails = new productDetails()
+  cartItemsArray : Array<any> = [];
 
   getBabiesProducts(){
     return this.http.get<Response<BabiesProducts[]>>(`http://localhost:4000/api/BabiesProducts/GetAllBabiesProduct`);
   }
+
   
   
   

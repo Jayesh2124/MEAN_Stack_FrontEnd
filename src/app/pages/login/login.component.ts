@@ -35,7 +35,7 @@ export default class LoginComponent implements OnInit{
         console.log("UserDetails", Response);
         
         localStorage.setItem("Green-mart-User",JSON.stringify(Response.data));
-        this.router.navigate(['home']);
+        this.router.navigate(['home/Dashboard']);
       },
       error:(err)=>{
         console.log(err)

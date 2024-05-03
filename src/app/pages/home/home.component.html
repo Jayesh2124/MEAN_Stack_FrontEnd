@@ -1,14 +1,14 @@
 
     <div class="mx-2 p-4   rounded-xl bg-slate-800 z-50 fixed top-0 left-4 right-0 font-bold text-xl md:text-4xl flex flex-row justify-between items-center">
-        <a class="text-slate-50 "> <span class="text-green-500">Green</span>-Mart  </a>
+        <a class="text-slate-50 " routerLink="/home/Dashboard" > <span class="text-green-500">Green</span>-Mart  </a>
         <div class="flex flex-row gap-5 items-center px-4">
           <a routerLink="/home/cart" >  <img src="../../../assets/cart.png" alt="cart"   class="h-7 md:h-14 hover:cursor-pointer"   > </a>
           <a routerLink="/home/cart" >  <img src="../../../assets/user.png" alt="user"   class="h-7 md:h-10 hover:cursor-pointer"   > </a>
         </div>
     </div>
-    <div class="container  flex flex-row gap-4 w-[80vh]">
-       <app-menu-sidebar class=" w-0 md:w-1/6 invisible md:visible fixed top-[5.8rem] left-4 right-0"  />
-    <div class="w-full md:w-5/6 container relative top-24 left-0 md:left-[20%] px-4 m-auto md:mx-2  right-0 my-2">
+    <div class="container  flex flex-row gap-4 ">
+       <app-menu-sidebar class="conatiner w-0 md:w-[20%] invisible md:visible fixed top-[5.8rem] left-4 right-0"  />
+    <div class="w-[75%] absolute top-[17%] md:left-[10%] px-0 m-auto md:mx-[10rem]   my-2">
         <router-outlet></router-outlet>
     </div>
    </div>
