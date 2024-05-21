@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { FruitService } from '../../services/fruit.service';
-import { Fruits } from '../../utilities/models';
+import {  Vegetables } from '../../utilities/models';
 import { CommonModule } from '@angular/common';
 import { CardsComponent } from '../../components/cards/cards.component';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-fruits',
@@ -13,8 +13,8 @@ import { CardsComponent } from '../../components/cards/cards.component';
 })
 export default class FruitsComponent implements OnInit {
 
-  private fruitService = inject(FruitService);
-  fruitsList : Array<Fruits> = []
+  private productService = inject(ProductsService);
+  fruitsList : Array<Vegetables> = []
 
   ngOnInit(){
       debugger;
@@ -24,10 +24,10 @@ export default class FruitsComponent implements OnInit {
   getFruitsData()
   {
     debugger;
-    this.fruitService.getFruits()
+    this.productService.getFruits()
     .subscribe({
       next: (Response)=>{
-        this.fruitsList = Response.data;
+        this.fruitsList = Response.data as [];
         console.log("Data: ",this.fruitsList);
       },
       error:(error)=>{

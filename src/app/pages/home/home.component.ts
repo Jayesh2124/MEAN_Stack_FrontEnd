@@ -1,9 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
-import { VeggiesServiceService } from '../../services/veggies-service.service';
 import { CardsComponent } from '../../components/cards/cards.component';
-import { Vegetables } from '../../utilities/models';
 import { MenuSidebarComponent } from '../../modules/menu-sidebar/menu-sidebar.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { HeaderComponent } from '../../components/header/header.component';

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
-import { VeggiesServiceService } from '../../services/veggies-service.service';
 import { Vegetables } from '../../utilities/models';
 import { CardsComponent } from '../../components/cards/cards.component';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-vegetables',
@@ -13,11 +13,11 @@ import { CardsComponent } from '../../components/cards/cards.component';
 })
 export default class VegetablesComponent implements OnInit{
 
-  private veggiesService = inject(VeggiesServiceService);
+  private productService = inject(ProductsService);
   veggiesList : Vegetables[] = [];
 
   ngOnInit(): void {
-    this.veggiesService.getVeggies()
+    this.productService.getVeggies()
     .subscribe({
       next:(Response)=>{
         console.log(Response);

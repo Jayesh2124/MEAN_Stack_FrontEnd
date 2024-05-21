@@ -1,13 +1,15 @@
+type NewType = 80
+
 export class Vegetables {
-    _id: string = '';
-    name: string = '';
-    color: string = '';
-    type: string = '';
-    nutrients: string[] = []
-    price_per_kg: number = 0
-    __v: number = 0
-    createdAt: string = '';
-    updatedAt: string = '';
+
+    category: string = ''
+    description: string = ''
+    imageUrl: string = ''
+    inStock: boolean = true
+    name : string = ''
+    price : number =0
+    quantity   : number =0
+    _id        :   string = '' 
 }
 export class Fruits {
     _id: string = '';
@@ -46,10 +48,10 @@ export class User {
     updatedAt: string = ''
 }
 
-export class  productDetails  {
-    productName : string = ''
-    price : number = 0
-    ingredients : any[any] = [] 
+export class productDetails {
+    productName: string = ''
+    price: number = 0
+    ingredients: any[any] = []
     volume: string = ''
     imgSrc: string = ''
 }

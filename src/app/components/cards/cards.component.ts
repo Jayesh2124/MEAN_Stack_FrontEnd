@@ -1,9 +1,9 @@
 import { Component,Input, inject } from '@angular/core';
 import {  Vegetables, productDetails } from '../../utilities/models';
 import { CommonModule } from '@angular/common';
-import { VeggiesServiceService } from '../../services/veggies-service.service';
 import { Router, RouterModule } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cards',
@@ -17,6 +17,7 @@ export class CardsComponent {
   @Input({required:true}) veggies!: Vegetables
   
   private productService = inject(ProductsService);
+  private cartService = inject(CartService);
   private router = inject(Router)
 
   viewProduct(productData : any ){
@@ -31,5 +32,11 @@ export class CardsComponent {
     this.productService.productDetails = details
     this.router.navigate(['home/Product']);
 
+  }
+
+  addToCart(product: any)
+  {
+    product.src = `../../../assets/vegetables/${product.name}.jpg`
+    this.cartService.addToCart(product);
   }
 }
